@@ -5,6 +5,7 @@ interface Chat {
     id: string;
     name: string;
     lastOnline: Date;
+    image: string;
     messages: Message[];
 }
 
@@ -19,6 +20,7 @@ export const useChatStore = defineStore('chat', () => {
             id: '6c0cb0f4-fbb5-11ed-be56-0242ac120002',
             name: 'Муниса Эргашева',
             lastOnline: new Date('2023-05-26T23:50:00'),
+            image: 'profile-1',
             messages: [
                 {
                     id: '6c0cb446-fbb5-11ed-be56-0242ac120002',
@@ -46,6 +48,7 @@ export const useChatStore = defineStore('chat', () => {
             id: '4a7eefb4-fbb6-11ed-be56-0242ac120002',
             name: 'Сергей Иванов',
             lastOnline: new Date('2023-05-26T21:45:00'),
+            image: 'profile-2',
             messages: [
                 {
                     id: '4e727afa-fbb6-11ed-be56-0242ac120002',
@@ -68,6 +71,7 @@ export const useChatStore = defineStore('chat', () => {
             id: '9f210e3a-fbde-11ed-be56-0242ac120002',
             name: 'Егор Морозов',
             lastOnline: new Date('2023-05-26T20:15:00'),
+            image: 'profile-3',
             messages: [
                 {
                     id: '9f211786-fbde-11ed-be56-0242ac120002',
@@ -85,6 +89,7 @@ export const useChatStore = defineStore('chat', () => {
             id: '4cdd9ba8-fbf1-11ed-be56-0242ac120002',
             name: 'Жаҳонгир Абдуллаев',
             lastOnline: new Date('2023-05-26T20:15:00'),
+            image: 'profile-4',
             messages: [
                 {
                     id: '4cdd96c6-fbf1-11ed-be56-0242ac120002',

@@ -39,7 +39,7 @@ const isActiveChat = (chatId: string) => {
     >
       <div class="user__item">
         <div class="user__img">
-          <img :src="`/profile-${idx + 1}.png`" :alt="`profile-${idx + 1}`">
+          <img :src="`/${chat.image}.png`" :alt="`profile-${idx + 1}`">
         </div>
         <div class="user__details">
           <h2 class="user__details-name">{{ chat.name }}</h2>
