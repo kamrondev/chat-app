@@ -12,7 +12,7 @@ const chatId = computed(() => route.params.id.toString());
 const selectedChat = computed(() => chatList.value.find(chat => chat.id === chatId.value));
 
 const newMessage = ref("");
-const chatBodyRef = ref(null);
+const chatBodyRef = ref<HTMLElement | null>(null);
 
 const scrollToBottom = () => {
   if (chatBodyRef.value) {
@@ -38,9 +38,10 @@ const sendMessage = () => {
   })
 };
 
-const getLastOnlineText = (lastOnline) => {
+const getLastOnlineText = (lastOnline: Date) => {
   const currentTime = new Date();
-  const diffInMinutes = Math.floor((currentTime - lastOnline) / (1000 * 60));
+  const diffInMinutes = Math.floor((currentTime.getTime() - lastOnline.getTime()) / (1000 * 60));
+
 
   if (diffInMinutes < 5) {
     return 'Онлайн';
