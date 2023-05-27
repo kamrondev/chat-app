@@ -19,6 +19,15 @@ const filteredChatList = computed(() => {
 const isActiveChat = (chatId: string) => {
   return route.path.includes(chatId);
 };
+
+const formatLastMessage = (text: string): string => {
+  const words = text.split(' ')
+  const shortenedText = words.slice(0, 5).join(' ')
+  if (words.length > 5) {
+    return `${shortenedText}...`
+  }
+  return shortenedText
+}
 </script>
 
 <template>
@@ -43,7 +52,7 @@ const isActiveChat = (chatId: string) => {
         </div>
         <div class="user__details">
           <h2 class="user__details-name">{{ chat.name }}</h2>
-          <p class="user__details-message">Ассалому алайкум. Кредит бўйича маълумот...</p>
+          <p class="user__details-message">{{ formatLastMessage(chat.messages[chat.messages.length - 1].text) }}</p>
         </div>
       </div>
       <div class="user__time">14:30</div>
